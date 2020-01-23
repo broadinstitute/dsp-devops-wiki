@@ -1,1 +1,2 @@
-This repository is a wiki for the dsp-devops team
+This repository has been created to host a wiki for operational and developmental items. 
+Please add your items to the Wiki: https://github.com/broadinstitute/dsp-devops-wiki/wiki

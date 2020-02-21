@@ -18,6 +18,8 @@ jobs:
         
       run: |
         ls
+        pwd
+        
         # echo "Pushing new pages"
         # cd $TEMP_CLONE_FOLDER
         # git add .

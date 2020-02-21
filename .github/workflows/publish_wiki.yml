@@ -13,9 +13,14 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Run a one-line script
-      run: echo Hello, world!
-    - name: Run a multi-line script
+      env:
+        TEMP_CLONE_FOLDER: test
+        
       run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
+        ls
+        # echo "Pushing new pages"
+        # cd $TEMP_CLONE_FOLDER
+        # git add .
+        # git commit -m "$WIKI_PUSH_MESSAGE"
+        # git push --set-upstream https://${GH_PAT}@github.com:$OWNER/$REPO_NAME.wiki.git master
         

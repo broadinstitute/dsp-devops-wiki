@@ -14,12 +14,17 @@ jobs:
     - uses: actions/checkout@v2
     - name: Run a one-line script
       env:
-        TEMP_CLONE_FOLDER: test
+        TEMP_CLONE_FOLDER: dsp-devops-wiki
         
       run: |
         cd ..
+        git pull https://github.com/broadinstitute/$TEMP_CLONE_FOLDER.git
+        echo "Pushing new pages"
+        cd $TEMP_CLONE_FOLDER
         ls
-        pwd
+        git add .
+        git status
+        # git commit -m "$WIKI_PUSH_MESSAGE"
         
         # echo "Pushing new pages"
         # cd $TEMP_CLONE_FOLDER

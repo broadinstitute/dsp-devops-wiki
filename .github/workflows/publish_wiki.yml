@@ -18,7 +18,8 @@ jobs:
         
       run: |
         cd ..
-        git pull https://github.com/broadinstitute/$TEMP_CLONE_FOLDER.git
+        echo "TEMP_CLONE_FOLDER: ${TEMP_CLONE_FOLDER}"
+        git pull https://github.com/broadinstitute/${TEMP_CLONE_FOLDER}.git
         echo "Pushing new pages"
         cd $TEMP_CLONE_FOLDER
         ls

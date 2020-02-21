@@ -17,6 +17,7 @@ jobs:
         TEMP_CLONE_FOLDER: test
         
       run: |
+        cd ..
         ls
         pwd
         

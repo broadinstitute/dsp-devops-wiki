@@ -15,19 +15,15 @@ jobs:
     - name: Run a one-line script
       env:
         TEMP_CLONE_FOLDER: dsp-devops-wiki
+        ACTION_NAME: rhiananthony
+        ACTION_EMAIL:rhian.anthony@gmail.com
       run: |
-        echo "CURRENT PATH: $(pwd)"
-        ls
-        cd ..
-        echo "LAYER UP"
-        ls
-        cd ..
-        echo "Two Layers Up"
-        ls
-        cd ..
-        echo "Three Layers Up"
-        ls
-        cd ..
+        mkdir $TEMP_CLONE_FOLDER
+        cd $TEMP_CLONE_FOLDER
+        git init
+        git config user.name $ACTION_NAME
+        git config user.email $ACTION_MAIL
+        git clone https://github.com/broadinstitute/dsp-devops-wiki.git
         
         # cd ..
         # echo "cloning repository"

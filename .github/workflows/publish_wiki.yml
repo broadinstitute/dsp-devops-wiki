@@ -30,9 +30,16 @@ jobs:
         ls
         
         echo "Pushing new pages"
+        echo "setting username"
         git config user.name $ACTION_NAME
+        
+        echo "setting email"
         git config user.email $ACTION_EMAIL
+        
+        echo "setting upstream branch"
         git branch --set-upstream-to https://github.com/broadinstitute/dsp-devops-wiki.wiki.git master
+        
+        "Adding files"
         git add .
         git commit -m "$WIKI_PUSH_MESSAGE"
         git push origin master

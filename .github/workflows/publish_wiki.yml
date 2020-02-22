@@ -33,5 +33,6 @@ jobs:
         git config user.name $ACTION_NAME
         git config user.email $ACTION_EMAIL
         git add .
+        
         # git commit -m "$WIKI_PUSH_MESSAGE"
         git push -f --set-upstream https://github.com/broadinstitute/dsp-devops-wiki.wiki.git

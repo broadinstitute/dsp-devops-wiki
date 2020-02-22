@@ -23,6 +23,11 @@ jobs:
         ls
         cd ..
         echo "Two Layers Up"
+        ls
+        cd ..
+        echo "Three Layers Up"
+        ls
+        cd ..
         
         # cd ..
         # echo "cloning repository"

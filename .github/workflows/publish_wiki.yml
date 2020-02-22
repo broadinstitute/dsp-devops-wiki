@@ -25,6 +25,7 @@ jobs:
         git config user.email $ACTION_EMAIL
         git clone https://github.com/broadinstitute/dsp-devops-wiki.git
         cd $TEMP_CLONE_FOLDER
+        pwd
         
         echo "Pushing new pages"
         git add .

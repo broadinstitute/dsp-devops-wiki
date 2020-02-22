@@ -22,7 +22,7 @@ jobs:
         cd $TEMP_CLONE_FOLDER
         git init
         git config user.name $ACTION_NAME
-        git config user.email $ACTION_MAIL
+        git config user.email $ACTION_EMAIL
         git clone https://github.com/broadinstitute/dsp-devops-wiki.git
         
         # cd ..

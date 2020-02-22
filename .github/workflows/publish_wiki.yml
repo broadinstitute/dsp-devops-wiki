@@ -15,16 +15,23 @@ jobs:
     - name: Run a one-line script
       env:
         TEMP_CLONE_FOLDER: dsp-devops-wiki
-        
       run: |
-        cd ..
-        echo "cloning repository"
-        git clone https://github.com/broadinstitute/dsp-devops-wiki.git
-        echo "Pushing new pages"
-        cd $TEMP_CLONE_FOLDER
+        echo "CURRENT PATH: $(pwd)"
         ls
-        git add .
-        git status
+        cd ..
+        echo "LAYER UP"
+        ls
+        cd ..
+        echo "Two Layers Up"
+        
+        # cd ..
+        # echo "cloning repository"
+        # git clone https://github.com/broadinstitute/dsp-devops-wiki.git
+        # echo "Pushing new pages"
+        # cd $TEMP_CLONE_FOLDER
+        # ls
+        # git add .
+        # git status
         # git commit -m "$WIKI_PUSH_MESSAGE"
         
         # echo "Pushing new pages"

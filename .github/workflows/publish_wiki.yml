@@ -17,6 +17,7 @@ jobs:
         TEMP_CLONE_FOLDER: dsp-devops-wiki
         ACTION_NAME: rhiananthony
         ACTION_EMAIL: rhian.anthony@gmail.com
+        WIKI_PUSH_MESSAGE: "Pushing latest changes to master branch"
       run: |
         mkdir $TEMP_CLONE_FOLDER
         cd $TEMP_CLONE_FOLDER
@@ -25,9 +26,6 @@ jobs:
         git config user.email $ACTION_EMAIL
         git clone https://github.com/broadinstitute/dsp-devops-wiki.git
         cd $TEMP_CLONE_FOLDER
-        pwd
-        ls
-        
         echo "Pushing new pages"
         git config user.name $ACTION_NAME
         git config user.email $ACTION_EMAIL

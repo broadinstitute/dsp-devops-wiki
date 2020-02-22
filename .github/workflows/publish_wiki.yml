@@ -18,7 +18,8 @@ jobs:
         
       run: |
         cd ..
-        git pull "https://github.com/broadinstitute/dsp-devops-wiki.git"
+        echo "cloning repository"
+        git clone https://github.com/broadinstitute/dsp-devops-wiki.git
         echo "Pushing new pages"
         cd $TEMP_CLONE_FOLDER
         ls

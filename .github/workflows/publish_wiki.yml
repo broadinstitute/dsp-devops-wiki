@@ -32,7 +32,7 @@ jobs:
         echo "Pushing new pages"
         git config user.name $ACTION_NAME
         git config user.email $ACTION_EMAIL
+        git branch --set-upstream-to https://github.com/broadinstitute/dsp-devops-wiki.wiki.git master
         git add .
-        
-        # git commit -m "$WIKI_PUSH_MESSAGE"
-        git push -f --set-upstream https://github.com/broadinstitute/dsp-devops-wiki.wiki.git
+        git commit -m "$WIKI_PUSH_MESSAGE"
+        git push origin master

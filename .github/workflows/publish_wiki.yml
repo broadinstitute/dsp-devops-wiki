@@ -16,7 +16,7 @@ jobs:
       env:
         TEMP_CLONE_FOLDER: dsp-devops-wiki
         ACTION_NAME: rhiananthony
-        ACTION_EMAIL:rhian.anthony@gmail.com
+        ACTION_EMAIL: rhian.anthony@gmail.com
       run: |
         mkdir $TEMP_CLONE_FOLDER
         cd $TEMP_CLONE_FOLDER

@@ -39,7 +39,11 @@ jobs:
         echo "setting upstream branch"
         git branch --set-upstream-to https://github.com/broadinstitute/dsp-devops-wiki.wiki.git master
         
-        "Adding files"
+        echo "Adding files"
         git add .
+        
+        echo "Committing files"
         git commit -m "$WIKI_PUSH_MESSAGE"
+        
+        echo "Pushing to the wiki master branch"
         git push origin master

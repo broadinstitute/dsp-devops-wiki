@@ -19,31 +19,27 @@ jobs:
         ACTION_EMAIL: rhian.anthony@gmail.com
         WIKI_PUSH_MESSAGE: "Pushing latest changes to master branch"
       run: |
-        mkdir $TEMP_CLONE_FOLDER
-        cd $TEMP_CLONE_FOLDER
-        git init
+        echo "current path: $(pwd)"
+        
+        echo "Configuring Github"
         git config user.name $ACTION_NAME
         git config user.email $ACTION_EMAIL
         git clone https://github.com/broadinstitute/dsp-devops-wiki.git
-        echo "PATH: $(pwd)"
         cd $TEMP_CLONE_FOLDER
         ls
         
-        echo "Pushing new pages"
-        echo "setting username"
+        echo "Configuring Github again"
         git config user.name $ACTION_NAME
-        
-        echo "setting email"
         git config user.email $ACTION_EMAIL
         
         echo "setting upstream branch"
         git branch --set-upstream-to https://github.com/broadinstitute/dsp-devops-wiki.wiki.git master
         
-        echo "Adding files"
-        git add .
+        # echo "Adding files"
+        # git add .
         
-        echo "Committing files"
-        git commit -m "$WIKI_PUSH_MESSAGE"
+        # echo "Committing files"
+        # git commit -m "$WIKI_PUSH_MESSAGE"
         
-        echo "Pushing to the wiki master branch"
-        git push origin master
+        # echo "Pushing to the wiki master branch"
+        git push -f origin master

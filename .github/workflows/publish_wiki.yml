@@ -18,7 +18,6 @@ jobs:
         ACTION_NAME: rhiananthony
         ACTION_EMAIL: rhian.anthony@gmail.com
         WIKI_PUSH_MESSAGE: "Pushing latest changes to master branch"
-        GH_PAT: "fe49eba74cf8565da4348b1bd2403f12a2da14f4"
       run: |
         echo "current path: $(pwd)"
         
@@ -30,13 +29,13 @@ jobs:
         git config user.email ${ACTION_EMAIL}
         
         echo "Pulling repo"
-        git pull https://${GH_PAT}@github.com/broadinstitute/dsp-devops-wiki.git
+        git pull https://${{ secrets.GH_PAT }}@github.com/broadinstitute/dsp-devops-wiki.git
         echo "current path: $(pwd)"
         ls
         
         echo "setting upstream branch"
-        echo "Token: ${GH_PAT}"
-        git push --set-upstream https://${GH_PAT}@github.com/broadinstitute/${TEMP_CLONE_FOLDER}.wiki.git master
+        echo "Token: ${{ secrets.GH_PAT }}"
+        git push --set-upstream https://${{ secrets.GH_PAT }}@github.com/broadinstitute/${TEMP_CLONE_FOLDER}.wiki.git master
         
         # echo "Committing files"
         # git commit -m "$WIKI_PUSH_MESSAGE"

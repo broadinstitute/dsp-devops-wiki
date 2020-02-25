@@ -33,8 +33,8 @@ jobs:
         # git config user.name $ACTION_NAME
         # git config user.email $ACTION_EMAIL
         
-        # echo "setting upstream branch"
-        # git branch --set-upstream-to https://github.com/broadinstitute/dsp-devops-wiki.wiki.git master
+        echo "setting upstream branch"
+        git push -u https://github.com/broadinstitute/dsp-devops-wiki.wiki.git master
         
         # echo "Adding files"
         # git add .

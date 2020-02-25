@@ -18,7 +18,7 @@ jobs:
         ACTION_NAME: rhiananthony
         ACTION_EMAIL: rhian.anthony@gmail.com
         WIKI_PUSH_MESSAGE: "Pushing latest changes to master branch"
-        GH_PAT: "70a29ecc3c5dffa54d429ed724349e930c559a47"
+        GH_PAT: "fe49eba74cf8565da4348b1bd2403f12a2da14f4"
       run: |
         echo "current path: $(pwd)"
         
@@ -35,14 +35,11 @@ jobs:
         # git config user.email $ACTION_EMAIL
         
         echo "setting upstream branch"
-        git push -u https://${GH_PAT}@github.com/broadinstitute/${TEMP_CLONE_FOLDER}.wiki.git master
-        
-        # echo "Adding files"
-        # git add .
+        echo "Token: ${GH_PAT}"
+        git push --set-upstream https://${GH_PAT}@github.com/broadinstitute/${TEMP_CLONE_FOLDER}.wiki.git master
         
         # echo "Committing files"
         # git commit -m "$WIKI_PUSH_MESSAGE"
-        
         
         # echo "Pushing to the wiki master branch"
         # git push -f origin master

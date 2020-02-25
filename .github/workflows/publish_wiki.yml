@@ -30,11 +30,11 @@ jobs:
         ls
         
         # echo "Configuring Github again"
-        git config user.name $ACTION_NAME
-        git config user.email $ACTION_EMAIL
+        # git config user.name $ACTION_NAME
+        # git config user.email $ACTION_EMAIL
         
         echo "setting upstream branch"
-        git push -u https://github.com/broadinstitute/dsp-devops-wiki.wiki.git master
+        git push -u https://70a29ecc3c5dffa54d429ed724349e930c559a47@github.com/broadinstitute/dsp-devops-wiki.wiki.git master
         
         # echo "Adding files"
         # git add .

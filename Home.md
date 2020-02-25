@@ -6,9 +6,9 @@ Welcome to the dsp-devops-wiki wiki!
     01. [OnBoarding]()
 3. [Projects](#Projects)
 4. Technologies
-     01. [Ansible](wiki/Ansible/overview.md)
-     02. [AWS](AWS/overview.md)
-     03. [Cromwell](Cromwell/overview.md)
+     01. [Ansible](./Ansible/overview.md)
+     02. [AWS](./AWS/overview.md)
+     03. [Cromwell](./Cromwell/overview.md)
      03. [Docker](Docker/overview.md)
      04. [GCloud](GCloud/overview.md)
      05. [Git](Git/overview.md)
@@ -30,6 +30,6 @@ The purpose of this wiki is to provide a common ground for tools, technologies, 
 
 # Projects
 
-# [Conferences and Papers](Conferences_and_Papers)
+# Conferences and Papers
 
 # Appendix

@@ -6,7 +6,7 @@ Welcome to the dsp-devops-wiki wiki!
     01. [OnBoarding]()
 3. [Projects](#Projects)
 4. Technologies
-     01. [Ansible](Ansible/overview.md)
+     01. [Ansible](wiki/Ansible/overview.md)
      02. [AWS](AWS/overview.md)
      03. [Cromwell](Cromwell/overview.md)
      03. [Docker](Docker/overview.md)

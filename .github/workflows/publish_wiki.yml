@@ -18,14 +18,15 @@ jobs:
         ACTION_NAME: rhiananthony
         ACTION_EMAIL: rhian.anthony@gmail.com
         WIKI_PUSH_MESSAGE: "Pushing latest changes to master branch"
+        GH_PAT: "70a29ecc3c5dffa54d429ed724349e930c559a47"
       run: |
         echo "current path: $(pwd)"
         
         echo "Configuring Github"
-        git config user.name $ACTION_NAME
-        git config user.email $ACTION_EMAIL
+        git config user.name ${ACTION_NAME}
+        git config user.email ${ACTION_EMAIL}
         git clone https://github.com/broadinstitute/dsp-devops-wiki.git
-        cd $TEMP_CLONE_FOLDER
+        cd ${TEMP_CLONE_FOLDER}
         echo "current path: $(pwd)"
         ls
         
@@ -34,7 +35,7 @@ jobs:
         # git config user.email $ACTION_EMAIL
         
         echo "setting upstream branch"
-        git push -u https://70a29ecc3c5dffa54d429ed724349e930c559a47@github.com/broadinstitute/dsp-devops-wiki.wiki.git master
+        git push -u https://${GH_PAT}@github.com/broadinstitute/${TEMP_CLONE_FOLDER}.wiki.git master
         
         # echo "Adding files"
         # git add .

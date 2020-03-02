@@ -30,6 +30,6 @@ The purpose of this wiki is to provide a common ground for tools, technologies, 
 
 # Projects
 
-# Conferences and Papers
+# [Conferences and Papers](Conferences and Papers)
 
 # Appendix

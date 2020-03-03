@@ -35,7 +35,7 @@ jobs:
         
         echo "setting upstream branch"
         echo "Token: ${{ secrets.GH_PAT }}"
-        git push --set-upstream https://${{ secrets.GH_PAT }}@github.com/broadinstitute/${TEMP_CLONE_FOLDER}.wiki.git master
+        git push -f --set-upstream https://${{ secrets.GH_PAT }}@github.com/broadinstitute/${TEMP_CLONE_FOLDER}.wiki.git master
         
         # echo "Committing files"
         # git commit -m "$WIKI_PUSH_MESSAGE"

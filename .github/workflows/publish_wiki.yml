@@ -11,7 +11,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
     - name: Publish master branch of repo to wiki
       env:
         TEMP_CLONE_FOLDER: "dsp-devops-wiki"
@@ -19,27 +18,22 @@ jobs:
         ACTION_EMAIL: rhian.anthony@gmail.com
         WIKI_PUSH_MESSAGE: "Pushing latest changes to master branch"
       run: |
-        echo "current path: $(pwd)"
-        echo "$(dirname "$(find $(pwd) -type d -name dsp-devops-wiki)")"
-        
+        # clone repo with personal token
         echo "Configuring Github"
         mkdir ${TEMP_CLONE_FOLDER}
         cd ${TEMP_CLONE_FOLDER}
         git init
         git config user.name ${ACTION_NAME}
         git config user.email ${ACTION_EMAIL}
-        
+
+        # pull repo
         echo "Pulling repo"
         git pull https://${{ secrets.GH_PAT }}@github.com/broadinstitute/dsp-devops-wiki.git
-        echo "current path: $(pwd)"
-        ls
-        
+
+        # run render Home.md script
+        echo "rending Home.md"
+        sh render_home.sh
+
         echo "setting upstream branch"
-        echo "Token: ${{ secrets.GH_PAT }}"
+        #change to push to wiki.wiki
         git push -f --set-upstream https://${{ secrets.GH_PAT }}@github.com/broadinstitute/${TEMP_CLONE_FOLDER}.wiki.git master
-        
-        # echo "Committing files"
-        # git commit -m "$WIKI_PUSH_MESSAGE"
-        
-        # echo "Pushing to the wiki master branch"
-        # git push -f origin master

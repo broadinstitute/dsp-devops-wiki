@@ -12,7 +12,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Run a one-line script
+    - name: Publish master branch of repo to wiki
       env:
         TEMP_CLONE_FOLDER: "dsp-devops-wiki"
         ACTION_NAME: rhiananthony

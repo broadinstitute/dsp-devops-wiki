@@ -20,7 +20,7 @@ jobs:
         WIKI_PUSH_MESSAGE: "Pushing latest changes to master branch"
       run: |
         echo "current path: $(pwd)"
-        ls /github/workspace/dsp-devops-wiki
+        wikipath="$(dirname "$(find $(pwd) -name -type d dsp-devops-wiki)")" && echo $wikipath
         
         echo "Configuring Github"
         mkdir ${TEMP_CLONE_FOLDER}

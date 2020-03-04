@@ -1,4 +1,4 @@
 # Overview
 
 # Docs
-* [Common GCloud Commands](gcloud_commands.md)
+* [Common GCloud Commands](https://github.com/broadinstitute/dsp-devops-wiki/wiki/gcloud_commands)

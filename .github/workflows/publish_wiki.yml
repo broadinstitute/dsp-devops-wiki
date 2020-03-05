@@ -41,10 +41,4 @@ jobs:
         #change to push to wiki.wiki
         git add Home.md
         git commit -m "Updated Home.md `date +'%Y-%m-%d %H:%M:%S'`"
-        gitstatus=$(git status -sb)
-        if echo "$gitstatus" | grep "ahead";
-        then
-          git push -f --set-upstream https://${{ secrets.GH_PAT }}@github.com/broadinstitute/${TEMP_CLONE_FOLDER}.wiki.git master
-        else
-          echo $status
-        fi
+        git push -f --set-upstream https://${{ secrets.GH_PAT }}@github.com/broadinstitute/${TEMP_CLONE_FOLDER}.wiki.git master

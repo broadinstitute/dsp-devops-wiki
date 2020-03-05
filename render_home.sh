@@ -30,7 +30,7 @@ for file in $confFiles
   do
     echo "$file"
       title=$(echo $file | awk -F/ {'print $3'} | sed 's/\.md//g')
-      filepath=$(echo $file | sed -e 's/\/ConferencesPapers//g')
+      filepath=$(echo $file | sed -e 's/\/ConferencesPaper//g')
       printf "  - [$title]($repo$filepath)\n" >> Home.md
 done
 printf "# Process\n" >> Home.md

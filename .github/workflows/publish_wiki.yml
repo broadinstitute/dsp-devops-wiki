@@ -44,7 +44,7 @@ jobs:
         gitstatus=$(git status -sb)
         if echo "$gitstatus" | grep "ahead";
         then
-          git push -f -v --set-upstream https://${{ secrets.GH_PAT }}@github.com/broadinstitute/${TEMP_CLONE_FOLDER}.wiki.git master
+          git push -f --set-upstream https://${{ secrets.GH_PAT }}@github.com/broadinstitute/${TEMP_CLONE_FOLDER}.wiki.git master
         else
           echo $status
         fi

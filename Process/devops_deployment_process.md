@@ -1,4 +1,8 @@
 ## Tools
+
+#### Overview
+This Document will cover a typical deployment process for an Emerald Empire GCP project, it will give an overview of what tools are used and what they do.
+
 #### Terraform
 Emerald DevOps will typically deploy most GCP artifacts via terraform. This gives us the ability to have infrastructure as code. Common usages currently include the following.
 - GCP specific
@@ -37,4 +41,4 @@ to do
 #### Terraform/Kubernetes End state
 1. Infrastructure deployments should be in code and ideally reusable code as you are not going to be the first to have done this type of deployment. Some shared Terraform modules can be found [here](https://github.com/broadinstitute/terraform-shared). Terraform is responsible for deploying all GCP artifacts up to when you are actually going to deploy your application to kubernetes itself. Please see above for a list of what DSP DevOps commonly [deploys](#Terraform).
 
-2. Application deployments on kubernetes should be done with `kubectl` and a kubernetes yaml or `helm`. Helm is the de facto application for management on Kubernetes. It is officially a CNCF incubator project and it is the preferred method for deployment of kubernetes applications within DSP. 
+2. Application deployments on kubernetes should be done with `kubectl` and a kubernetes yaml or `helm`. Helm is the de facto application for management on Kubernetes. It is officially a CNCF incubator project and it is the preferred method for deployment of kubernetes applications within DSP.

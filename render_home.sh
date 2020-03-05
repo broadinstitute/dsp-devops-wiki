@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-linkFiles=`find . -name "*.md"|grep 'Links' | sed 's|^.||' | sort`
-techFiles=`find . -name "*.md"|grep 'Technologies' | sed 's|^.||' | sort`
-confFiles=`find . -name "*.md"|grep 'ConferencesPaper' | sed 's|^.||' | sort`
-processFiles=`find . -name "*.md"|grep 'Process' | sed 's|^.||'`
+linkFiles=`find . -name "*.md"|grep 'Links' | sed 's|^.||' | sed -e 's/\.md//g' | sort`
+techFiles=`find . -name "*.md"|grep 'Technologies' | sed 's|^.||' | sed -e 's/\.md//g' |sort`
+confFiles=`find . -name "*.md"|grep 'ConferencesPaper' | sed 's|^.||' | sed -e 's/\.md//g' |sort`
+processFiles=`find . -name "*.md"|grep 'Process' | sed 's|^.||' | sed -e 's/\.md//g'| sort`
 repo=https://github.com/broadinstitute/dsp-devops-wiki/wiki
 
 printf "Welcome to the dsp-devops-wiki wiki!

@@ -5,6 +5,27 @@ confFiles=`find . -name "*.md"|grep 'ConferencesPaper' | sed 's|^.||' | sed -e '
 processFiles=`find . -name "*.md"|grep 'Process' | sed 's|^.||' | sed -e 's/\.md//g'|  sort`
 repo=https://github.com/broadinstitute/dsp-devops-wiki/wiki
 
+
+render_section(){
+  files=$1
+  destination=$2
+
+  for file in $files
+  do
+      title=$(echo "${file}" | awk -F/ {'print $4'})
+      echo "Title: ${title}"
+      if  [[ "${title}" ==  *_home && "${destination}" == "Home" ]];
+      then
+        printf "  - %s%s\n, [$title],($repo/$title)" >> "${destination}".md
+      elif [[ "${title}" == *_cheat_sheet ]];
+      then
+
+      fi
+
+  done
+}
+
+# Render the Main Home page
 printf "Welcome to the dsp-devops-wiki wiki!
 
 # Table of Contents
@@ -18,36 +39,13 @@ printf "Welcome to the dsp-devops-wiki wiki!
 The purpose of this wiki is to provide a common ground for tools, technologies, projects, techniques and other items of interest to doing DevOps at the Broad Institute.\n" >> Home.md
 
 printf "# Technologies\n\n" >> Home.md
-for file in $techFiles
-  do
-    echo "$file"
-      title=$(echo $file | awk -F/ {'print $3'} | sed 's/\.md//g')
-      filepath=$(echo $file | sed -e 's/\/Technologies//g')
-      printf "  - [$title]($repo$filepath)\n" >> Home.md
-done
-printf "# ConferencesPapers\n\n" >> Home.md
-for file in $confFiles
-  do
-    echo "$file"
-      title=$(echo $file | awk -F/ {'print $3'} | sed 's/\.md//g')
-      filepath=$(echo $file | sed -e 's/\/ConferencesPapers//g')
-      printf "  - [$title]($repo$filepath)\n" >> Home.md
-done
-printf "# Process\n" >> Home.md
-for file in $processFiles
-  do
-    echo "$file"
-      title=$(echo $file | awk -F/ {'print $3'} | sed 's/\.md//g')
-      filepath=$(echo $file | sed -e 's/\/Process//g')
-      printf "  - [$title]($repo$filepath)\n" >> Home.md
-done
-printf "# Links\n\n" >> Home.md
-for file in $linkFiles
-  do
-    echo "$file"
-      title=$(echo $file | awk -F/ {'print $3'} | sed 's/\.md//g')
-      filepath=$(echo $file | sed -e 's/\/Links//g')
-      printf "  - [$title]($repo$filepath)\n" >> Home.md
-done
+render_section  "$techFiles[@]" "Home"
 
-cat Home.md
+printf "# ConferencesPapers\n\n" >> Home.md
+render_section  "$confFiles[@]" "Home"
+
+printf "# Process\n" >> Home.md
+render_section  "$processFiles[@]" "Home"
+
+printf "# Links\n\n" >> Home.md
+render_section  "$linkFiles[@]" "Home"

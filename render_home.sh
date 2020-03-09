@@ -16,6 +16,7 @@ render_section(){
       echo "Title: ${title}"
       if  [[ "${title}" ==  *_home ]];
       then
+        printf "test ${title}" >> "${destination}".md
         printf "  - %s%s\n, [$title],($repo/$title)" >> "${destination}".md
       fi
 
@@ -36,13 +37,13 @@ printf "Welcome to the dsp-devops-wiki wiki!
 The purpose of this wiki is to provide a common ground for tools, technologies, projects, techniques and other items of interest to doing DevOps at the Broad Institute.\n" >> Home.md
 
 printf "# Technologies\n\n" >> Home.md
-render_section  "$techFiles[@]" "Home"
+render_section  "${techFiles[@]}" "Home"
 
 printf "# ConferencesPapers\n\n" >> Home.md
-render_section  "$confFiles[@]" "Home"
+render_section  "${confFiles[@]}" "Home"
 
 printf "# Process\n" >> Home.md
-render_section  "$processFiles[@]" "Home"
+render_section  "${processFiles[@]}" "Home"
 
 printf "# Links\n\n" >> Home.md
-render_section  "$linkFiles[@]" "Home"
+render_section  "${linkFiles[@]}" "Home"

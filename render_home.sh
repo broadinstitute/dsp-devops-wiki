@@ -19,12 +19,13 @@ render_section(){
       fi
 
       echo "Title: ${title}"
-
-      scrubbed_title="${title//_/ }"
+      echo "New Title: ${title//_/ }"
+      
+      # scrubbed_title="${title//_/ }"
 
       case "$title" in 
         *_home)
-          printf "  - [%s](%s/%s)\n" "${scrubbed_title}" "${repo}" "${title}" >> "${destination}".md
+          printf "  - [%s](%s/%s)\n" "${title}" "${repo}" "${title}" >> "${destination}".md
           ;;
       esac
 

@@ -16,7 +16,6 @@ render_section(){
       echo "Title: ${title}"
       if  [[ "${title}" ==  *_home ]];
       then
-        printf "test ${title}" >> "${destination}".md
         printf "  - %s%s\n, [$title],($repo/$title)" >> "${destination}".md
       fi
 

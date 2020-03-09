@@ -13,7 +13,7 @@ render_section(){
   for file in $files
   do
       title=$(echo "${file}" | awk -F/ {'print $4'})
-      if [[ -z ${title} || ${title} == "" ]];
+      if [ -z "${title}" ];
       then
         title=$(echo "${file}" | awk -F/ {'print $3'})
       fi
@@ -42,13 +42,13 @@ printf "Welcome to the dsp-devops-wiki wiki!
 The purpose of this wiki is to provide a common ground for tools, technologies, projects, techniques and other items of interest to doing DevOps at the Broad Institute.\n" >> Home.md
 
 printf "# Technologies\n\n" >> Home.md
-render_section  "$techFiles[@]" "Home"
+render_section  "${techFiles}[@]" "Home"
 
 printf "# ConferencesPapers\n\n" >> Home.md
-render_section  "$confFiles[@]" "Home"
+render_section  "${confFiles}[@]" "Home"
 
 printf "# Process\n" >> Home.md
-render_section  "$processFiles[@]" "Home"
+render_section  "${processFiles}[@]" "Home"
 
 printf "# Links\n\n" >> Home.md
-render_section  "$linkFiles[@]" "Home"
+render_section  "${linkFiles}[@]" "Home"

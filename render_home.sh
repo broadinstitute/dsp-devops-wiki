@@ -20,9 +20,9 @@ render_section(){
 
       echo "Title: ${title}"
 
-      if [[ ${title} ==  *_home ]];
+      if [[ "${title}" ==  *_home ]];
       then
-        printf "  - [$title]($repo/$title)\n" >> "${destination}".md
+        printf "  - %s%s/%s\n" "${title}" "${repo}" "${title}" >> "${destination}".md
       fi
 
   done

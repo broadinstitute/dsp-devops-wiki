@@ -19,7 +19,6 @@ render_section(){
       fi
 
       echo "Title: ${title}"
-      echo "New Title: ${title//_/ }"
       
       scrubbed_title=$(echo "$title" | sed -e "s/\_/ /g")
       

@@ -21,7 +21,7 @@ render_section(){
       echo "Title: ${title}"
       echo "New Title: ${title//_/ }"
       
-      scrubbed_title=$(sed -e 's/_/ /g' <<< $title)
+      scrubbed_title=$(echo "$title" | sed -e "s/\_/ /g")
       
       case "$title" in 
         *_home)

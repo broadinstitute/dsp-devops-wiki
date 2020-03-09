@@ -17,9 +17,6 @@ render_section(){
       if  [[ "${title}" ==  *_home && "${destination}" == "Home" ]];
       then
         printf "  - %s%s\n, [$title],($repo/$title)" >> "${destination}".md
-      elif [[ "${title}" == *_cheat_sheet ]];
-      then
-
       fi
 
   done

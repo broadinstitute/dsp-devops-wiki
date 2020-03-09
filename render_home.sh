@@ -14,7 +14,7 @@ render_section(){
   do
       title=$(echo "${file}" | awk -F/ {'print $4'})
       echo "Title: ${title}"
-      if  [[ "${title}" ==  *_home && "${destination}" == "Home" ]];
+      if  [[ "${title}" ==  *_home ]];
       then
         printf "  - %s%s\n, [$title],($repo/$title)" >> "${destination}".md
       fi

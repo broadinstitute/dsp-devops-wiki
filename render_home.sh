@@ -13,7 +13,13 @@ render_section(){
   for file in $files
   do
       title=$(echo "${file}" | awk -F/ {'print $4'})
+      if [[ -z ${title} ]];
+      then
+        title=$(echo "${file}" | awk -F/ {'print $3'})
+      fi
+
       echo "Title: ${title}"
+
       if  [[ "${title}" ==  *_home ]];
       then
         printf "  - %s%s\n, [$title],($repo/$title)" >> "${destination}".md

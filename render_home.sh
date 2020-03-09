@@ -21,8 +21,8 @@ render_section(){
       echo "Title: ${title}"
       echo "New Title: ${title//_/ }"
       
-      # scrubbed_title="${title//_/ }"
-
+      scrubbed_title=$(sed -e 's/_/ /g' <<< $title)
+      
       case "$title" in 
         *_home)
           printf "  - [%s](%s/%s)\n" "${title}" "${repo}" "${title}" >> "${destination}".md

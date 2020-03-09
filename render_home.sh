@@ -22,7 +22,7 @@ render_section(){
 
       if [[ ${title} ==  *_home ]];
       then
-        printf "  - %s%s\n, [$title],($repo/$title)" >> "${destination}".md
+        printf "  - [$title]($repo/$title)\n" >> "${destination}".md
       fi
 
   done
@@ -45,10 +45,10 @@ printf "# Technologies\n\n" >> Home.md
 render_section  "${techFiles}[@]" "Home"
 
 printf "# ConferencesPapers\n\n" >> Home.md
-render_section  "${confFiles}[@]" "Home"
+# render_section  "${confFiles}[@]" "Home"
 
 printf "# Process\n" >> Home.md
-render_section  "${processFiles}[@]" "Home"
+# render_section  "${processFiles}[@]" "Home"
 
 printf "# Links\n\n" >> Home.md
-render_section  "${linkFiles}[@]" "Home"
+# render_section  "${linkFiles}[@]" "Home"

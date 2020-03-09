@@ -13,7 +13,7 @@ render_section(){
   for file in $files
   do
       title=$(echo "${file}" | awk -F/ {'print $4'})
-      if [[ -z ${title} ]];
+      if [[ -z ${title} || ${title} == "" ]];
       then
         title=$(echo "${file}" | awk -F/ {'print $3'})
       fi

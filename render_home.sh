@@ -52,3 +52,4 @@ printf "# Process\n" >> Home.md
 
 printf "# Links\n\n" >> Home.md
 # render_section  "${linkFiles}[@]" "Home"
+

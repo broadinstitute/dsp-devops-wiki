@@ -20,10 +20,11 @@ render_section(){
 
       echo "Title: ${title}"
 
-      if [[ $title ==  *_home ]];
-      then
-        printf "  - %s%s/%s\n" "${title}" "${repo}" "${title}" >> "${destination}".md
-      fi
+      case "$title" in 
+        *_home)
+          printf "  - %s%s/%s\n" "${title}" "${repo}" "${title}" >> "${destination}".md
+          ;;
+      esac
 
   done
 }

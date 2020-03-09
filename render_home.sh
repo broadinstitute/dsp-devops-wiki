@@ -22,7 +22,7 @@ render_section(){
 
       case "$title" in 
         *_home)
-          printf "  - %s%s/%s\n" "${title}" "${repo}" "${title}" >> "${destination}".md
+          printf "  - [%s](%s/%s)\n" "${title}" "${repo}" "${title}" >> "${destination}".md
           ;;
       esac
 

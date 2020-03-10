@@ -1,4 +1,10 @@
-# Overview
+# Cheat Sheets
+  - [networks creating cheat sheet](https://github.com/broadinstitute/dsp-devops-wiki/wiki/networks_creating_cheat_sheet)
 
-# Docs
-* [Create DNS Zone](https://github.com/broadinstitute/dsp-devops-wiki/wiki/networking_create_DNS_zone)
+# How To Guides
+
+# References
+
+# Other
+  - [networks creating DNS zone](https://github.com/broadinstitute/dsp-devops-wiki/wiki/networks_creating_DNS_zone)
+

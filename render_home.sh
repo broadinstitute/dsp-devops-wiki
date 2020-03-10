@@ -20,7 +20,7 @@ render_files(){
 
       scrubbed_title=$(echo "$title" | sed -e "s/\_/ /g")
 
-      if [ "${destination}" == "Home" ]
+      if [ "${destination}" = "Home" ]
       then
         case "$title" in
           *_home)

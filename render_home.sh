@@ -118,8 +118,6 @@ The purpose of this wiki is to provide a common ground for tools, technologies, 
   printf "\n\n" >> Home.md
 }
 
-
 render_folders
 
 render_main_page
-

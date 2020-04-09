@@ -5,7 +5,7 @@ The following links are where each teams helm chart repository are located
 
 
 #### Datarepo
-https://github.com/broadinstitute/datarepo-helm/charts
+https://github.com/broadinstitute/datarepo-helm/tree/master/charts
 
 #### Monster
 https://github.com/broadinstitute/monster-helm/tree/master/charts
